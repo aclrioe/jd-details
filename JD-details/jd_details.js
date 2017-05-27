@@ -1,13 +1,8 @@
 var cityJson;
 $().ready(function(){
 	pPhoto.init();
-	$("#productnavlist>li").each(function(){
-		$(this).mouseover(function(){
-			$("#productnavlist>li").removeClass("producthover");
-			$(this).addClass("producthover");
-		})
-	});
     pCc.bind();
+    //页面最头部左上角的城市
   	$(".citysUl a").click(function(){
   		$(".citysUl a").removeClass("ctactive");
   		$(this).addClass("ctactive");
@@ -38,7 +33,7 @@ $().ready(function(){
     });
     wraplr.click();
 });
-
+//商品介绍 规格与包装 售后保障 商品评价来回切换
 var wraplr = {
 	click:function(){
 		$(".navli").click(function(){
@@ -142,6 +137,7 @@ var pCc={
 	}
 
 }
+//新建一个对象，产品图片整个的事件都写在里面
 var pPhoto = {
 	LIWIDTH: 78,
 	moved: 0,
@@ -214,9 +210,14 @@ var pPhoto = {
 			$(".wrapLT>img")[0].src = addre;
 			$("#largeMask>img")[0].src = addre;
 		}
+		$("#productnavlist>li").mouseover(function(){
+			$("#productnavlist>li").removeClass("producthover");
+			$(this).addClass("producthover");
+	});
 	}
 	
 }
+
 //定义StringBuffer
 function StringBuffer(str) {
   var arr = [];
